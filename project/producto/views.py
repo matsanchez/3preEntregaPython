@@ -19,11 +19,11 @@ def home(request):
 
 def crear_producto(request):
     if request.method == "GET":
-        #mostrar formulario
         context = {"form":ProductoFormulario()}
         return render(request, "producto/formulario_crear_producto.html", context)
     else:
         form = ProductoFormulario(request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
-        return render(request,"producto/index.html")
+        context = {"form":ProductoFormulario()}
+        return render(request, "producto/formulario_crear_producto.html", context)

@@ -19,11 +19,11 @@ def home(request):
 
 def crear_cliente(request):
     if request.method == "GET":
-        #mostrar formulario
         context = {"form":ClienteFormulario()}
         return render(request, "cliente/formulario_crear_cliente.html", context)
     else:
         form = ClienteFormulario(request.POST)
         if form.is_valid():
             form.save()
-        return render(request,"cliente/index.html")
+        context = {"form":ClienteFormulario()}
+        return render(request, "cliente/formulario_crear_cliente.html", context)
