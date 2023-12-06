@@ -8,7 +8,7 @@
 
 Para ejecutar el proyecto, el mismo puede descargarse como .zip o git clone
 
-[Clic aqui para descargar repo formato zip](https://github.com/matsanchez/preEntregaPython/archive/refs/heads/main.zip)
+[Clic aqui para descargar repo formato zip](https://github.com/matsanchez/3preEntregaPython/archive/refs/heads/main.zip)
 
 Copiar y pegar en la terminal :
 
