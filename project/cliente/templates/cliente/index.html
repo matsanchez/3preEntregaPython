@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    {% include 'core/header.html' with titulo="Nuestros Clientes" buscador=True%}
+{% endblock header %}
+
+{% block contenido %}
+    <section class="py-5 border-bottom mb-5">
+        <div class="container px-5 my-5">
+            <div class="row gx-5">
+                {% if clientes %}
+                    {% for cliente in clientes %}
+                        {% include 'core/card_cliente.html' with titulo=cliente.nombre apellido=cliente.apellido email=cliente.email nacimiento=cliente.nacimiento%}
+                    {% endfor %}
+                {% else %}
+                        <section class="border-bottom">
+                            <div class="container px-5 my-5 px-5">
+                              <div class="text-center mb-5">
+                                <h2 class="fw-bolder">Su busqueda no arrojo resultados...</h2>
+                                <p class="lead mb-0">Intente con otros parametros su busqueda</p>
+                              </div>
+                              <div class="row gx-5 justify-content-center text-center">
+                                <a href="{% url 'cliente:index' %}">Ver todo el listado</a>
+                              </div>
+                              </div>
+                            </div>
+                        </section>    
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock contenido%}

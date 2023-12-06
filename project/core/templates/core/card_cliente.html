@@ -1,0 +1,12 @@
+<div class="card m-2" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{titulo}} {{apellido}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{nacimiento}}</h6>
+    {% if email %}
+      <p class="card-text">{{email}}</p>
+      {% else %}
+        <p class="card-text">No tiene email</p>
+    {% endif %}
+    <button class="btn btn-secondary disabled">Ver Perfil</button> 
+  </div>
+</div>

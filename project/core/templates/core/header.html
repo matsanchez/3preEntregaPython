@@ -1,0 +1,26 @@
+{% load static %}
+<header  class="img-fluid bg-dark py-5" style="background-image: url('/static/core/assets/img/bg-masthead.jpg');background-size: auto">
+  <div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-6">
+        <div class="text-center my-5">
+          <h1 class="bg-light fw-bolder text-black mb-2 rounded p-2">{{titulo}}</h1>
+          <p class="bg-dark rounded lead text-white-50 mb-4 p-2">{{subtitulo}}</p>
+        </div>
+        {% if buscador %}
+          <div class="container">
+            <form action="" class="d-flex justify-content-center flex-direction-row " method="POST">
+              {% csrf_token %}
+              {{form.as_p}}
+                <div class="px-3">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </div>
+            </form>
+          </div>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Bienvenidos a la 3° Entrega Python -->

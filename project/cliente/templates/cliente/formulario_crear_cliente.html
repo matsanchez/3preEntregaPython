@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    {% include 'core/header.html' with titulo="Registrate como cliente" subtitulo="Complete el siguiente formulario" %}
+{% endblock header %}
+
+{% block contenido %}
+<section class="bg-light py-5 border-bottom">
+    <div class="container col-lg-6 col-xl-4">
+    <form action="/cliente/crear" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </form>
+    </div>
+</section>
+{% endblock contenido %}
+
+
+

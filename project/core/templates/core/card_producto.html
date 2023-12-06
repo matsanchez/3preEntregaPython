@@ -1,0 +1,21 @@
+{% load static %}
+<div class="col-lg-6 col-xl-4">
+    <div class="container card mb-5 mb-xl-0">
+      <img src='/media/{{imagen}}' class="card-img-top mt-2" alt="Foto Producto"/>
+      <div class="card-body p-5">
+        <div class="small text-uppercase fw-bold">{{titulo}}</div>
+        <div class="mb-3">
+          <span class="display-4 fw-bold text-muted">${{precio}}</span>
+        </div>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">
+            <i class="bi bi-check text-primary"></i>
+            <strong>{{categoria}}</strong>
+          </li>
+          <li class="mb-2">
+            <p>{{descripcion}}</p>
+        </ul>
+        <div class="d-grid"><a class="btn btn-outline-primary disabled" href="#!">Comprar</a></div>
+      </div>
+    </div>
+  </div>

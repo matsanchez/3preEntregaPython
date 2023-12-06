@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block header %}
+    {% include 'core/header.html' with titulo="Nuestros Productos" buscador=True %}
+{% endblock header %}
+
+{% block contenido %}
+<section class="py-5 border-bottom">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            {% if productos %}
+                {% for producto in productos %}
+                    {% include 'core/card_producto.html' with titulo=producto.nombre descripcion=producto.descripcion precio=producto.precio imagen=producto.imagen %}
+                {% endfor %}
+            {% else %}
+            <section class="border-bottom">
+                <div class="container px-5 my-5 px-5">
+                  <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Su busqueda no arrojo resultados...</h2>
+                    <p class="lead mb-0">Intente con otros parametros su busqueda</p>
+                  </div>
+                  <div class="row gx-5 justify-content-center text-center">
+                    <a href="{% url 'producto:index' %}">Ver todo el listado</a>
+                  </div>
+                  </div>
+                </div>
+              </section>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock contenido%}
